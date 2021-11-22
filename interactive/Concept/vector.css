@@ -1,0 +1,21 @@
+article {
+  width: 500px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  padding: 50px;
+  margin: 50px auto;
+}
+article svg {
+  width: 100%;
+}
+article svg path {
+  fill: transparent;
+  stroke: red;
+  stroke-width: 12px;
+  stroke-dasharray: 1420;
+  stroke-dashoffset: -1420;
+  transition: 3s;
+}
+article:hover svg path {
+  stroke-dashoffset: 0;
+}
