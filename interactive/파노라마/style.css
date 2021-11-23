@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  outline: 0;
+  text-decoration: none;
+}
+img {
+  border: 0;
+}
+body {
+  font: 17px/1.4 "orbitron";
+  letter-spacing: 1px;
+  color: #ddd;
+  background: #000;
+  min-height: 100vh;
+}
+.wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  perspective: 1300px;
+}
+.wrap > video {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  object-fit: cover;
+  opacity: 0.5;
+}
+.wrap #circle {
+  width: 480px;
+  height: 640px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -320px;
+  margin-left: -240px;
+}
+.wrap #circle article {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.wrap #circle article h1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 30px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.wrap #circle article:hover h1 {
+  top: -60px;
+  opacity: 1;
+}
+.wrap #circle article .inner {
+  width: 100%;
+  height: 100%;
+}
+.wrap #circle article .inner > div {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 40px;
+  position: relative;
+  opacity: 0.7;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.wrap #circle article .inner > div:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+/* face1 */
+.wrap #circle .face1 {
+  /* display: block; */
+}
+.wrap #circle .face1 .inner > div {
+  width: 232px;
+  height: 199px;
+  float: left;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.wrap #circle .face1 .inner > div p i {
+  font-size: 80px;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+.wrap #circle .face1 .inner > div h2 {
+  margin-top: 16px;
+  letter-spacing: 2px;
+  transition: 0.5s;
+}
+.wrap #circle .face1 .inner > div:nth-of-type(odd) {
+  margin-right: 16px;
+}
+.wrap #circle .inner > div:hover i {
+  color: lightcyan;
+  text-shadow: 0 0 10px aqua;
+  transform: scale(1.2);
+  opacity: 1;
+}
+.wrap #circle article .inner > div:hover h2 {
+  color: lightcyan;
+  text-shadow: 0 0 10px aqua;
+}
+
+/* face2 */
+.wrap #circle .face2 {
+  /* display: block; */
+}
+.wrap #circle .face2 .inner > div {
+  width: 100%;
+  height: 100%;
+}
+.wrap #circle .face2 .inner > div img {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.wrap #circle .face2 .inner > div h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+.wrap #circle .face2 .inner > div p {
+  font: 16px/1.3 "arial";
+  color: #ccc;
+}

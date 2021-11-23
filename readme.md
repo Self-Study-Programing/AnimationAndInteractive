@@ -10,4 +10,4 @@
 6. <a href="https://github.com/Self-Study-Programing/AnimationAndInteractive/tree/master/cssAnimation/focus">focus</a>
 7. <a href="https://github.com/Self-Study-Programing/AnimationAndInteractive/tree/master/cssAnimation/iconhover">icon hover</a>
 8. <a href="https://github.com/Self-Study-Programing/AnimationAndInteractive/tree/master/cssAnimation/animationscene">animationscene</a>
-9. <a href="https://github.com/Self-Study-Programing/AnimationAndInteractive/tree/master/cssAnimation/CardInteractions">animationscene</a>
+9. <a href="https://github.com/Self-Study-Programing/AnimationAndInteractive/tree/master/cssAnimation/CardInteractions">cardInteractive</a>
