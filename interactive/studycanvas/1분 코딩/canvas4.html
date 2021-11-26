@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        background-color: #f3f3f3;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas class="canvas" width="600" height="400"></canvas>
+    <script>
+      const canvas = document.querySelector(".canvas");
+      const context = canvas.getContext("2d");
+      let timerId;
+
+      let xPos = 10;
+      let count = 0;
+
+      function draw() {
+        count++;
+        if (count % 5 === 0) {
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          context.beginPath();
+          context.arc(xPos, 150, 10, 0, Math.PI * 2, true);
+          context.fill();
+          xPos += 3;
+        }
+
+        // if (xPos >= canvas.width - 10) {
+        //   return 0;
+        // }
+        timerId = requestAnimationFrame(draw);
+
+        if (xPos >= canvas.width - 10) {
+          cancelAnimationFrame(timerId);
+        }
+      }
+      draw();
+
+      canvas.addEventListener("click", () => {
+        cancelAnimationFrame(timerId);
+      });
+    </script>
+  </body>
+</html>

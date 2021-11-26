@@ -13,25 +13,17 @@
   </head>
   <body>
     <canvas class="canvas" width="600" height="400"></canvas>
+
     <script>
-      const canvas = document.querySelector(".canvas");
+      const canvas = document.querySelector("canvas");
       const context = canvas.getContext("2d");
 
-      let xPos = 10;
-      let count = 0;
-
-      function draw() {
-        count++;
-        if (count % 5 === 0) {
-          context.clearRect(0, 0, canvas.width, canvas.height);
-          context.beginPath();
-          context.arc(xPos, 150, 10, 0, Math.PI * 2, true);
-          context.fill();
-          xPos += 3;
-        }
-        requestAnimationFrame(draw);
-      }
-      draw();
+      const imgElem = new Image();
+      imgElem.src = "../../../cssAnimation/img/CardInteractions/img1.jpeg";
+      imgElem.addEventListener("load", () => {
+        context.drawImage(imgElem, 50, 50, 70, 70);
+        context.drawImage(imgElem, 100, 100, 200, 200, 200, 200, 100, 100);
+      });
     </script>
   </body>
 </html>
