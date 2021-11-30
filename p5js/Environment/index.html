@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
+      integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      function setup() {
+        // describe(
+        //   "pink square with red heart in the bottom right corner",
+        //   LABEL
+        // );
+        // background("pink");
+        // fill("red");
+        // noStroke();
+        // ellipse(67, 67, 20, 20);
+        // ellipse(83, 67, 20, 20);
+        // triangle(91, 73, 75, 95, 59, 73);
+      }
+
+      //   let x = 0;
+      //   function draw() {
+      //     if (x > 100) {
+      //       x = 0;
+      //     }
+      //     background(220);
+      //     fill(0, 255, 0);
+      //     ellipse(x, 50, 40, 40);
+      //     x = x + 0.1;
+      //     describe(
+      //       "green circle at x pos " + round(x) + " moving to the right",
+      //       LABEL
+      //     );
+      //   }
+
+      //   function setup() {
+      // describe("Heart and yellow circle over pink background");
+      // noStroke();
+      // background("pink");
+      // describeElement(
+      //   "Circle",
+      //   "Yellow circle in the top left corner",
+      //   LABEL
+      // );
+      // fill("yellow");
+      // ellipse(25, 25, 40, 40);
+      // describeElement("Heart", "red heart in the bottom right corner", LABEL);
+      // fill("red");
+      // ellipse(66.6, 66.6, 20, 20);
+      // ellipse(83.2, 66.6, 20, 20);
+      // triangle(91.2, 72.6, 75, 95, 58.6, 72.6);
+
+      //     textOutput(LABEL);
+      //     background(148, 196, 0);
+      //     fill(255, 0, 0);
+      //     ellipse(20, 20, 20, 20);
+      //     fill(0, 0, 255);
+      //     rect(50, 50, 50, 50);
+      //   }
+
+      //   let x = 0;
+      //   function draw() {
+      //     textOutput(LABEL);
+      //     background(148, 196, 0);
+      //     fill(255, 0, 0);
+      //     ellipse(x, 20, 20, 20);
+      //     fill(0, 0, 255);
+      //     rect(50, 50, 50, 50);
+      //     ellipse(20, 20, 20, 20);
+      //     x += 0.1;
+      //   }
+
+      //   function setup() {
+      //     gridOutput(LABEL);
+      //     background(148, 196, 0);
+      //     fill(255, 0, 0);
+      //     ellipse(20, 20, 20, 20);
+      //     fill(0, 0, 255);
+      //     rect(50, 50, 50, 50);
+      //   }
+
+      let x = 0;
+      function draw() {
+        gridOutput(LABEL);
+        background(148, 196, 0);
+        fill(255, 0, 0);
+        ellipse(x, 20, 20, 20);
+        fill(0, 0, 255);
+        rect(50, 50, 50, 50);
+        ellipse(20, 20, 20, 20);
+        x += 0.1;
+      }
+    </script>
+  </body>
+</html>
