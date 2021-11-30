@@ -1,4 +1,6 @@
-# describe()
+# Environment
+
+## describe()
 
 스크린리더 (Screen Reader)를 위한 캔버스의 전체적인 서술적 묘사를 설정합니다. 첫 번째 매개변수는 문자열이며, 설정할 묘사입니다. 두 번째 매개변수는 선택 사항이며, 묘사의 표시법을 지정합니다.
 
@@ -26,7 +28,7 @@ function draw() {
 }
 ```
 
-# describeElement()
+## describeElement()
 
 스크린리더 (Screen Reader)를 위한 캔버스의 요소(도형, 또는 도형의 모임)의 서술적 묘사를 설정합니다. 첫 번째 매개변수는 묘사할 요소의 이름입니다. 두 번째 매개변수는 문자열이며 설정할 묘사입니다. 세 번째 매개변수는 선택 사항이며, 묘사의 표시법을 지정합니다.
 
@@ -56,7 +58,7 @@ function setup() {
 }
 ```
 
-# textOutput()
+## textOutput()
 
 textOutput() 함수는 스크린리더 (Screen Reader)를 위한 도형의 설명을 출력합니다. 이 설명은 자동적으로 만들어지며, 첫 부분은 캔버스의 높이 및 너비, 배경색, 그리고 캔버스상 요소 (도형, 또는 도형의 모임)의 개수를 출력합니다
 각 요소에 대한 구체적 정보는 선택해서 볼 수 있습니다. 요소들의 목록이 제공됩니다. 이 목록에는 도형, 색, 위치, 좌표와 넓이가 묘사되어 있습니다
@@ -75,7 +77,7 @@ fill(0, 0, 255);
 rect(50, 50, 50, 50);
 ```
 
-# gridOutput()
+## gridOutput()
 
 gridOutput()은 캔버스의 내용물을 위치적에 따라 격자 (grid) 형식으로 나열합니다. 이 테이블을 출력하기 전에 컨버스의 전반적 설명을 출력합니다. 캔버스의 높이 및 너비, 배경색, 그리고 캔버스상 요소 (도형, 또는 도형의 모임)의 개수를 출력합니다 (예: 'Your output is a, 400 by 400 pixels, lavender blue canvas containing the following 4 shapes:'). 그리드는 내용물을 위치적으로 설명하며, 각 요소는 위치의 격자 위 셀 (cell)에 놓입니다. 각 셀에는 특정 요소의 색상과 모양이 저장되어 있습니다 (예: "orange ellipse"). 각 요소에 대한 구체적 정보는 선택해서 볼 수 있습니다. 각 요소의 모양, 색, 위치, 넓이 등의 정보가 표기되어 있는 목록
 
@@ -111,7 +113,7 @@ function draw() {
 }
 ```
 
-# print()
+## print()
 
 print() 함수는 브라우저 콘솔창에 출력할 때 사용됩니다. 프로그램이 생성하는 데이터를 확인할 때 주로 도움됩니다. 함수는 매번 호출될 때마다 콘솔창에 새로운 텍스트 줄을 만듭니다. 개별 요소는 큰따옴표로 분리하고, 더하기 연산자(+)로 두 요소를 결합할 수 있습니다.
 
@@ -124,7 +126,7 @@ print("The value of x is " + x);
 
 print(contents)
 
-# frameCount()
+## frameCount()
 
 시스템 변수 frameCount는 프로그램 시작 이후 화면에 나타난 프레임의 개수를 측정합니다. setup() 함수의 기본값은 0이고, draw() 함수의 첫 번째 반복 실행이 마치면 1씩 증가하는 식입니다.
 
@@ -141,7 +143,7 @@ function draw() {
 }
 ```
 
-# deltaTime
+## deltaTime
 
 deltaTime 은 전 프레임의 시작 시간과 본 프레임의 시작 시간의 차를 저장합니다.
 
@@ -183,7 +185,7 @@ function draw() {
 }
 ```
 
-# focused
+## focused
 
 p5.js 프로그램이 등장하는 화면창의 초점이 맞는지 여부를 확인하며, 이는 곧 스케치가 마우스나 키보드 입력을 허용한다는 것을 의미합니다. 화면창의 초점이 맞으면 변수는 true이고, 그렇지 않으면 false입니다.
 
@@ -206,7 +208,7 @@ function draw() {
 }
 ```
 
-# cursor()
+## cursor()
 
 마우스 커서를 사전에 정의된 기호나 이미지로 설정하거나, 숨김 상태일 경우 이를 해제합니다. 특정 이미지를 커서로 설정할 경우, 권장 사이즈는 16x16 또는 32x32 입니다. 매개변수 x와 y의 값은 이미지의 실제 크기보다 훨씬 더 작아야 합니다.
 
@@ -232,7 +234,7 @@ type 문자열|상수: ARROW, CROSS, HAND, MOVE, TEXT, WAIT. CSS 요소인 'grab
 x 숫자: (선택 사항) 커서의 수평 활성 지점 (32미만으로 지정)  
 y 숫자: (선택 사항) 커서의 수직 활성 지점 (32미만으로 지정)
 
-# frameRate()
+## frameRate()
 
 화면에 나타날 프레임 수를 매 초단위로 지정합니다. 예를 들어, frameRate(30)은 초당 30회씩 새로 고침을 시도합니다. 프로세서가 지정된 속도를 유지할만큼 빠르지 않다면, 프레임 속도에 달성되지 않습니다. setup() 함수 내에서 프레임 속도를 설정하는 것을 권장합니다. 기본값으로 제공되는 프레임 속도는 디스플레이의 프레임 속도('새로 고침 빈도')를 기준으로 합니다. 초당 24 프레임 정도면 애니메이션을 부드럽게 재생할 수 있습니다. 이 함수는 setFrameRate(val)와 동일한 효과를 갖습니다.
 
@@ -246,7 +248,7 @@ frameRate()
 매개변수  
 fps 숫자：1초 동안 화면에 나타날 프레임 수
 
-# noCursor()
+## noCursor()
 
 설명  
 화면상 커서를 숨깁니다.
@@ -265,7 +267,7 @@ function draw() {
 }
 ```
 
-# displayWidth, displayHeight
+## displayWidth, displayHeight
 
 ```js
 createCanvas(displayWidth, displayHeight);
@@ -273,13 +275,13 @@ createCanvas(displayWidth, displayHeight);
 
 pixelDensity 함수의 기본값에 따라 화면의 너비값을 저장하는 시스템 변수입니다. 모든 디스플레이에서 프로그램을 전체 화면으로 실행시킬 때 사용합니다. 실제 화면 크기값을 반환하려면 여기에 pixelDensity를 곱하면 됩니다.
 
-# windowWidth, windowHeight
+## windowWidth, windowHeight
 
 사용자의 윈도우 화면 너비값을 저장해주는 시스템 변수로, window.innerWidth에 매핑됩니다.
 
 사용자의 윈도우 화면 높이값을 저장해주는 시스템 변수로, window.innerHeight에 매핑됩니다.
 
-# windowResized()
+## windowResized()
 
 windowResized() 함수는 브라우저 창의 크기가 조정될 때마다 한 번씩 호출됩니다. 캔버스 크기를 재조정하거나 새 윈도우 화면의 크기에 맞춰 조정할 때 유용합니다.
 
@@ -296,5 +298,78 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+}
+```
+
+## fullScreen()
+
+사용자가 지정한 인수값을 기준으로 스케치를 전체 화면으로 설정합니다. 인수를 지정하지 않으면 현재 전체 화면 모드를 반환합니다. 위의 예제는 브라우저 제한으로 인해 마우스 입력과같은 사용자 입력이 있을 때 이 함수를 호출합니다.
+
+```js
+function setup() {
+  background(200);
+}
+function mousePressed() {
+  if (mouseX > 0 && mouseX < 100 && mouseY > 0 && mouseY < 100) {
+    let fs = fullscreen();
+    fullscreen(!fs);
+  }
+}
+```
+
+## pixelDensity()
+
+픽셀 밀도가 높은 디스플레이의 픽셀 크기를 조정합니다. pixelDensity()는 그 기본값으로 화면의 픽셀 밀도와 일치하도록 설정되어 있으며, pixelDensity(1)를 호출하여 이를 해제할 수 있습니다. 별도의 인수없이 pixelDensity() 함수를 호출하면, 스케치의 현재 픽셀 밀도가 반환됩니다.
+
+pixelDensity(val)
+
+```js
+function setup() {
+  pixelDensity(1);
+  createCanvas(100, 100);
+  background(200);
+  ellipse(width / 2, height / 2, 50, 50);
+}
+
+function setup() {
+  pixelDensity(3.0);
+  createCanvas(100, 100);
+  background(200);
+  ellipse(width / 2, height / 2, 50, 50);
+}
+```
+
+## displayDensity()
+
+스케치가 실행 중인 현재 디스플레이의 픽셀 밀도를 반환합니다.
+
+```js
+function setup() {
+  let density = displayDensity();
+  pixelDensity(density);
+  createCanvas(100, 100);
+  background(200);
+  ellipse(width / 2, height / 2, 50, 50);
+}
+```
+
+# getURL()
+
+현재 URL을 받아옵니다.
+
+```js
+let url;
+let x = 100;
+
+function setup() {
+  fill(0);
+  noStroke();
+  url = getURL();
+}
+
+function draw() {
+  background(200);
+  text(url, x, height / 2);
+  x--;
 }
 ```
