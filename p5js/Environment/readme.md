@@ -110,3 +110,191 @@ function draw() {
   x += 0.1;
 }
 ```
+
+# print()
+
+print() 함수는 브라우저 콘솔창에 출력할 때 사용됩니다. 프로그램이 생성하는 데이터를 확인할 때 주로 도움됩니다. 함수는 매번 호출될 때마다 콘솔창에 새로운 텍스트 줄을 만듭니다. 개별 요소는 큰따옴표로 분리하고, 더하기 연산자(+)로 두 요소를 결합할 수 있습니다.
+
+인수없이 print()를 호출하면, window.print()와 동일하게 브라우저상 인쇄 기능을 켭니다. 콘솔창에 빈 줄을 출력하려면 print(' ')을 작성하면 됩니다.
+
+```js
+let x = 10;
+print("The value of x is " + x);
+```
+
+print(contents)
+
+# frameCount()
+
+시스템 변수 frameCount는 프로그램 시작 이후 화면에 나타난 프레임의 개수를 측정합니다. setup() 함수의 기본값은 0이고, draw() 함수의 첫 번째 반복 실행이 마치면 1씩 증가하는 식입니다.
+
+```js
+function setup() {
+  frameRate(30);
+  textSize(30);
+  textAlign(CENTER);
+}
+
+function draw() {
+  background(200);
+  text(frameCount, width / 2, height / 2);
+}
+```
+
+# deltaTime
+
+deltaTime 은 전 프레임의 시작 시간과 본 프레임의 시작 시간의 차를 저장합니다.
+
+이 변수는 시간적으로 민감한 애니매시션, 또는 프레임레이트와 관계없이 일정해야 하는 물리학적 계산에 유용합니다.
+
+문법
+deltaTime
+
+```js
+let rectX = 0;
+let fr = 30; //starting FPS
+let clr;
+
+function setup() {
+  background(200);
+  frameRate(fr); // Attempt to refresh at starting FPS
+  clr = color(255, 0, 0);
+}
+
+function draw() {
+  background(200);
+  rectX = rectX + 1 * (deltaTime / 50); // Move Rectangle in relation to deltaTime
+
+  if (rectX >= width) {
+    // If you go off screen.
+    if (fr === 30) {
+      clr = color(0, 0, 255);
+      fr = 10;
+      frameRate(fr); // make frameRate 10 FPS
+    } else {
+      clr = color(255, 0, 0);
+      fr = 30;
+      frameRate(fr); // make frameRate 30 FPS
+    }
+    rectX = 0;
+  }
+  fill(clr);
+  rect(rectX, 40, 20, 20);
+}
+```
+
+# focused
+
+p5.js 프로그램이 등장하는 화면창의 초점이 맞는지 여부를 확인하며, 이는 곧 스케치가 마우스나 키보드 입력을 허용한다는 것을 의미합니다. 화면창의 초점이 맞으면 변수는 true이고, 그렇지 않으면 false입니다.
+
+문법
+focused
+
+```js
+function draw() {
+  background(200);
+  noStroke();
+  fill(0, 200, 0);
+  ellipse(25, 25, 50, 50);
+
+  if (!focused) {
+    // or "if (focused === false)"
+    stroke(200, 0, 0);
+    line(0, 0, 100, 100);
+    line(100, 0, 0, 100);
+  }
+}
+```
+
+# cursor()
+
+마우스 커서를 사전에 정의된 기호나 이미지로 설정하거나, 숨김 상태일 경우 이를 해제합니다. 특정 이미지를 커서로 설정할 경우, 권장 사이즈는 16x16 또는 32x32 입니다. 매개변수 x와 y의 값은 이미지의 실제 크기보다 훨씬 더 작아야 합니다.
+
+```js
+function draw() {
+  line(width / 2, 0, width / 2, height);
+  line(0, height / 2, width, height / 2);
+  if (mouseX < 50 && mouseY < 50) {
+    cursor(CROSS);
+  } else if (mouseX > 50 && mouseY < 50) {
+    cursor("progress");
+  } else if (mouseX > 50 && mouseY > 50) {
+    cursor("https://avatars0.githubusercontent.com/u/1617169?s=16");
+  } else {
+    cursor("grab");
+  }
+}
+```
+
+cursor(type, [x], [y])
+
+type 문자열|상수: ARROW, CROSS, HAND, MOVE, TEXT, WAIT. CSS 요소인 'grab', 'progress', 'cell' 등. 외부: 커서 이미지의 경로(허용 파일 확장자:.cur, .gif, .jpg, .jpeg, .png, url)  
+x 숫자: (선택 사항) 커서의 수평 활성 지점 (32미만으로 지정)  
+y 숫자: (선택 사항) 커서의 수직 활성 지점 (32미만으로 지정)
+
+# frameRate()
+
+화면에 나타날 프레임 수를 매 초단위로 지정합니다. 예를 들어, frameRate(30)은 초당 30회씩 새로 고침을 시도합니다. 프로세서가 지정된 속도를 유지할만큼 빠르지 않다면, 프레임 속도에 달성되지 않습니다. setup() 함수 내에서 프레임 속도를 설정하는 것을 권장합니다. 기본값으로 제공되는 프레임 속도는 디스플레이의 프레임 속도('새로 고침 빈도')를 기준으로 합니다. 초당 24 프레임 정도면 애니메이션을 부드럽게 재생할 수 있습니다. 이 함수는 setFrameRate(val)와 동일한 효과를 갖습니다.
+
+별도의 인수없이 frameRate() 함수를 호출하면 현재 프레임 속도가 반환됩니다. 프레임 속도를 반환하기 위해서는 draw() 함수를 한 번 이상 실행해야 합니다. 이는 getFrameRate() 함수와도 동일합니다.
+
+숫자형이 아니거나 양수가 아닌 숫자형의 인수로 frameRate() 함수를 호출하면 마찬가지로 현재 프레임 속도를 반환합니다.
+
+문법  
+frameRate(fps)  
+frameRate()  
+매개변수  
+fps 숫자：1초 동안 화면에 나타날 프레임 수
+
+# noCursor()
+
+설명  
+화면상 커서를 숨깁니다.
+
+문법  
+noCursor()
+
+```js
+function setup() {
+  noCursor();
+}
+
+function draw() {
+  background(200);
+  ellipse(mouseX, mouseY, 10, 10);
+}
+```
+
+# displayWidth, displayHeight
+
+```js
+createCanvas(displayWidth, displayHeight);
+```
+
+pixelDensity 함수의 기본값에 따라 화면의 너비값을 저장하는 시스템 변수입니다. 모든 디스플레이에서 프로그램을 전체 화면으로 실행시킬 때 사용합니다. 실제 화면 크기값을 반환하려면 여기에 pixelDensity를 곱하면 됩니다.
+
+# windowWidth, windowHeight
+
+사용자의 윈도우 화면 너비값을 저장해주는 시스템 변수로, window.innerWidth에 매핑됩니다.
+
+사용자의 윈도우 화면 높이값을 저장해주는 시스템 변수로, window.innerHeight에 매핑됩니다.
+
+# windowResized()
+
+windowResized() 함수는 브라우저 창의 크기가 조정될 때마다 한 번씩 호출됩니다. 캔버스 크기를 재조정하거나 새 윈도우 화면의 크기에 맞춰 조정할 때 유용합니다.
+
+windowResized([event])
+
+```js
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+}
+
+function draw() {
+  background(0, 100, 200);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+```

@@ -88,16 +88,51 @@
       //     rect(50, 50, 50, 50);
       //   }
 
-      let x = 0;
+      //   let x = 0;
+      //   function draw() {
+      //     gridOutput(LABEL);
+      //     background(148, 196, 0);
+      //     fill(255, 0, 0);
+      //     ellipse(x, 20, 20, 20);
+      //     fill(0, 0, 255);
+      //     rect(50, 50, 50, 50);
+      //     ellipse(20, 20, 20, 20);
+      //     x += 0.1;
+      //     print("The value of x is " + x);
+      //   }
+
+      //   function setup() {
+      //     frameRate(30);
+      //     textSize(30);
+      //     textAlign(CENTER);
+      //   }
+
+      //   function draw() {
+      //     background(200);
+      //     text(frameCount, width / 2, height / 2);
+      //   }
+
+      //   function draw() {
+      //     line(width / 2, 0, width / 2, height);
+      //     line(0, height / 2, width, height / 2);
+      //     if (mouseX < 50 && mouseY < 50) {
+      //       cursor(CROSS);
+      //     } else if (mouseX > 50 && mouseY < 50) {
+      //       cursor("progress");
+      //     } else if (mouseX > 50 && mouseY > 50) {
+      //       cursor("https://avatars0.githubusercontent.com/u/1617169?s=16");
+      //     } else {
+      //       cursor("grab");
+      //     }
+      //   }
+
+      function setup() {
+        noCursor();
+      }
+
       function draw() {
-        gridOutput(LABEL);
-        background(148, 196, 0);
-        fill(255, 0, 0);
-        ellipse(x, 20, 20, 20);
-        fill(0, 0, 255);
-        rect(50, 50, 50, 50);
-        ellipse(20, 20, 20, 20);
-        x += 0.1;
+        background(200);
+        ellipse(mouseX, mouseY, 10, 10);
       }
     </script>
   </body>
