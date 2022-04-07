@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.no-animation {
+  -webkit-animation: none !important;
+  animation: none !important;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #3eaf82;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 100px;
+  height: 60px;
+  position: relative;
+}
+.stick {
+  width: 100%;
+  height: 13px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+}
+/* each stick */
+
+/* 기본 */
+.one {
+  top: 0px;
+  width: 100%;
+  height: 13px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  animation: one-nomal 1s ease-in-out;
+}
+.two {
+  top: 21px;
+  width: 100%;
+  height: 13px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  animation: two-nomal 1s ease-in-out;
+}
+.three {
+  top: 42px;
+  width: 100%;
+  height: 13px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  animation: three-nomal 1s ease-in-out;
+}
+
+/* 클릭 시 */
+
+.one.click {
+  animation: one-ani 1s ease-in-out forwards;
+}
+.two.click {
+  animation: two-ani 1s ease-in-out forwards;
+}
+.three.click {
+  animation: three-ani 1s ease-in-out forwards;
+}
+
+/* animation */
+
+/* 기본 */
+
+@keyframes one-nomal {
+  0% {
+    transform: translate3d(0, 21px, 0) rotate(45deg);
+  }
+  15% {
+    transform: scale(1.2) translate3d(0, 21px, 0) rotate(45deg);
+  }
+  25% {
+    transform: scale(1) translate3d(0, 21px, 0) rotate(45deg);
+  }
+  60% {
+    transform: translate3d(0, 21px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes two-nomal {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes three-nomal {
+  0% {
+    transform: translate3d(0, -21px, 0) rotate(-45deg);
+  }
+  15% {
+    transform: scale(1.2) translate3d(0, -21px, 0) rotate(-45deg);
+  }
+  25% {
+    transform: scale(1) translate3d(0, -21px, 0) rotate(-45deg);
+  }
+  60% {
+    transform: translate3d(0, -21px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* 클릭 시 */
+@keyframes one-ani {
+  15% {
+    transform: scale(1.2);
+  }
+  25% {
+    transform: scale(1);
+  }
+  50% {
+    transform: translate(0px, 21px);
+  }
+  100% {
+    transform: translate3d(0, 21px, 0) rotate(45deg);
+  }
+}
+
+@keyframes two-ani {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.2);
+  }
+  25% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes three-ani {
+  15% {
+    transform: scale(1.2);
+  }
+  25% {
+    transform: scale(1);
+  }
+  50% {
+    transform: translate(0px, -21px);
+  }
+  100% {
+    transform: translate3d(0, -21px, 0) rotate(-45deg);
+  }
+}

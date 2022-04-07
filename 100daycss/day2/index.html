@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="stick one no-animation"></div>
+      <div class="stick two no-animation"></div>
+      <div class="stick three no-animation"></div>
+    </div>
+
+    <script>
+      const click = document.querySelector(".container");
+      const stick = document.querySelectorAll(".stick");
+
+      click.addEventListener("click", () => {
+        stick.forEach((v) => v.classList.remove("no-animation"));
+        stick.forEach((v) => v.classList.toggle("click"));
+      });
+    </script>
+  </body>
+</html>
