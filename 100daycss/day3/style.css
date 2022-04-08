@@ -1,0 +1,196 @@
+/* setting */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 400px;
+  height: 400px;
+  background-color: #000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* circle */
+
+.circle_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle {
+  position: relative;
+  overflow: hidden;
+  clip-path: circle(50%);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  /* border: 1px solid white; */
+}
+.sky {
+  width: 100%;
+  height: 124px;
+  background: #7ddffc;
+  animation: sky 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+.mount {
+  width: 100%;
+  height: 56px;
+  background: #f0de75;
+  animation: mount 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+.side-left {
+  position: absolute;
+  top: 67px;
+  left: 35px;
+  height: 57px;
+  width: 116px;
+  background: #f4f4f4;
+  clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+  animation: left 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+.side-right {
+  position: absolute;
+  top: 67px;
+  left: 93px;
+  height: 57px;
+  width: 58px;
+  background: #dddada;
+  clip-path: polygon(30% 100%, 100% 100%, 0% 0%);
+  animation: right 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+/* 애니메이션 대상 */
+
+.sun {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 7px;
+  left: 73px;
+  background: #ffef00;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 1px rgba(255, 240, 0, 0.3);
+  transform-origin: 50% 380%;
+  animation: sun 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+.shadow {
+  position: absolute;
+  top: 124px;
+  height: 57px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  clip-path: polygon(20% 0%, 85% 7%, 84% 0%);
+  animation: shadow 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+/* 애니메이션 */
+
+@keyframes shadow {
+  0% {
+    clip-path: polygon(20% 0%, 85% 7%, 84% 0%);
+  }
+  45% {
+    clip-path: polygon(20% 0%, 90% 40%, 84% 0%);
+  }
+  50% {
+    clip-path: polygon(20% 0%, 55% 20%, 84% 0%);
+  }
+  65% {
+    clip-path: polygon(20% 0%, 10% 40%, 84% 0%);
+  }
+  100% {
+    clip-path: polygon(20% 0%, 0% 7%, 84% 0%);
+  }
+}
+
+@keyframes left {
+  0% {
+    background: #000;
+  }
+  30% {
+    background: #f4f4f4;
+  }
+  70% {
+    background: #dddada;
+  }
+  100% {
+    background: #000;
+  }
+}
+@keyframes right {
+  0% {
+    background: #000;
+  }
+  30% {
+    background: #dddada;
+  }
+  70% {
+    background: #f4f4f4;
+  }
+  100% {
+    background: #000;
+  }
+}
+
+@keyframes sky {
+  0% {
+    background: rgba(0, 0, 0, 1);
+  }
+  30% {
+    background: rgba(125, 223, 252, 1);
+  }
+  70% {
+    background: rgba(125, 223, 252, 1);
+  }
+  100% {
+    background: rgba(0, 0, 0, 1);
+  }
+}
+
+@keyframes mount {
+  0% {
+    background: rgba(0, 0, 0, 1);
+  }
+  30% {
+    background: rgba(240, 222, 117, 1);
+  }
+  70% {
+    background: rgba(240, 222, 117, 1);
+  }
+  100% {
+    background: rgba(0, 0, 0, 1);
+  }
+}
+
+@keyframes sun {
+  0% {
+    background: #f57209;
+    transform: rotate(-70deg);
+  }
+
+  30% {
+    background: #ffef00;
+    transform: rotate(-28deg);
+  }
+
+  70% {
+    background: #ffef00;
+  }
+
+  100% {
+    background: #f57209;
+    transform: rotate(70deg);
+  }
+}
