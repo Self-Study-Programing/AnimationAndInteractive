@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+.container {
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  background: #42a7a1;
+}
+.gragh {
+  width: 280px;
+  height: 220px;
+  box-shadow: 4px 6px 13px 2px rgba(0, 0, 0, 0.3);
+}
+.head {
+  height: 60px;
+  width: 100%;
+  background: #f1ba64;
+  color: white;
+  position: relative;
+}
+.title {
+  position: absolute;
+  text-transform: uppercase;
+  font-weight: 600;
+  top: 14px;
+  left: 10px;
+}
+.head-date {
+  font-size: 13px;
+  font-weight: 300;
+  position: absolute;
+  left: 10px;
+  top: 30px;
+}
+.head-p {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  font-size: 12px;
+}
+.head-all-money {
+  position: absolute;
+  top: 28px;
+  right: 10px;
+}
+
+/* gragh-t */
+
+[class^="color-"] {
+  width: 10px;
+  border-radius: 10px;
+  height: 4px;
+}
+
+.color-red {
+  background: #fa7373;
+}
+.color-blue {
+  background-color: #7ba2ff;
+}
+
+p {
+  font-size: 8px;
+  margin-left: 3px;
+}
+
+.nav {
+  width: 100%;
+  padding: 10px 0 12px 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: right;
+  padding-right: 5px;
+}
+.views {
+  width: 60px;
+}
+
+.main {
+  width: 100%;
+  height: 90px;
+  background: #fff;
+  position: relative;
+}
+
+[class^="line"] {
+  height: 1px;
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  background: #f2f2f2;
+}
+
+.line-1 {
+  top: 0;
+}
+.line-2 {
+  top: 50%;
+}
+.line-3 {
+  top: 95%;
+}
+
+polyline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  z-index: 2;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 3%;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.red polyline {
+  stroke: #fa7373;
+}
+.blue polyline {
+  stroke: #7ba2ff;
+}
+.points {
+  position: absolute;
+  left: 3%;
+  top: 0;
+}
+[class^="point-red"] {
+  width: 6px;
+  height: 6px;
+  background-color: #fa7373;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 3;
+}
+[class^="point-blue"] {
+  width: 6px;
+  height: 6px;
+  background-color: #7ba2ff;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 3;
+}
+.point-red-1 {
+  left: 7px;
+  top: 43px;
+}
+.point-red-2 {
+  left: 47px;
+  top: 10px;
+}
+.point-red-3 {
+  left: 87px;
+  top: 20px;
+}
+.point-red-4 {
+  left: 127px;
+  top: 8px;
+}
+.point-red-5 {
+  left: 168px;
+  top: 35px;
+}
+.point-red-6 {
+  left: 208px;
+  top: 45px;
+}
+.point-red-7 {
+  left: 248px;
+  top: 16px;
+}
+.point-blue-1 {
+  left: 6px;
+  top: 58px;
+}
+.point-blue-2 {
+  left: 47px;
+  top: 47px;
+}
+.point-blue-3 {
+  left: 87px;
+  top: 62px;
+}
+.point-blue-4 {
+  left: 127px;
+  top: 52px;
+}
+.point-blue-5 {
+  left: 168px;
+  top: 58px;
+}
+.point-blue-6 {
+  left: 208px;
+  top: 71px;
+}
+.point-blue-7 {
+  left: 248px;
+  top: 61px;
+}
+
+[class^="number-red"] {
+  position: absolute;
+  left: -10px;
+  top: -18px;
+  width: 27px;
+  height: 18px;
+  border-radius: 3px;
+  background: #fa7373;
+  font-size: 5px;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+[class^="number-red"]::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 6px;
+  height: 6px;
+  background: #fa7373;
+  transform: rotate(45deg);
+}
+
+[class^="point-red"]:hover > .number-red-1 {
+  opacity: 1;
+  visibility: visible;
+  top: -23px;
+}
+
+[class^="number-blue"] {
+  position: absolute;
+  left: -10px;
+  top: -18px;
+  width: 27px;
+  height: 18px;
+  border-radius: 3px;
+  background: #7ba2ff;
+  font-size: 5px;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+[class^="number-blue"]::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 6px;
+  height: 6px;
+  background: #7ba2ff;
+  transform: rotate(45deg);
+}
+[class^="point-blue"]:hover > .number-blue-1 {
+  opacity: 1;
+  visibility: visible;
+  top: -23px;
+}
+
+.footer {
+  width: 100%;
+  height: 35px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 11px;
+  color: #949494;
+}
+
+/* global */
+
+.df {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
