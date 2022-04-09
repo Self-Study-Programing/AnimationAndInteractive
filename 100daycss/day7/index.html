@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container flex">
+      <div class="notifications">
+        <div class="head">
+          <div class="menu-icon">
+            <div class="bar-1"></div>
+            <div class="bar-2"></div>
+            <div class="bar-circle"></div>
+          </div>
+          <input type="text" class="search-bar non" placeholder="Seach ..." />
+          <div class="head-title">Notifications</div>
+          <div class="search-custom">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+        <div class="main">
+          <div class="line"></div>
+          <div class="post">
+            <div class="post-circle"></div>
+            <div class="time">9:24 AM</div>
+            <div class="des">John Walker posted a photo on your wall.</div>
+          </div>
+          <div class="post">
+            <div class="post-circle"></div>
+            <div class="time">9:24 AM</div>
+            <div class="des">Alice Parker commented your last post.</div>
+          </div>
+          <div class="post">
+            <div class="post-circle"></div>
+            <div class="time">9:24 AM</div>
+            <div class="des">Luke Wayne added you as friend.</div>
+          </div>
+        </div>
+      </div>
+      <ul class="side-bar non">
+        <li>
+          <div class="icon"><i class="fa-solid fa-chart-bar"></i></div>
+          <div class="write">Dashboard</div>
+        </li>
+        <li>
+          <div class="icon"><i class="fa-solid fa-address-card"></i></div>
+          <div class="write">Profile</div>
+        </li>
+        <li>
+          <div class="icon"><i class="fa-solid fa-bell"></i></div>
+          <div class="write">Notifications</div>
+        </li>
+        <li>
+          <div class="icon"><i class="fa-solid fa-message"></i></div>
+          <div class="write">Messages</div>
+        </li>
+        <li>
+          <div class="icon"><i class="fa-solid fa-gear"></i></div>
+          <div class="write">Settings</div>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      const searchBtn = document.querySelector(".search-custom");
+      const searchInput = document.querySelector(".search-bar");
+      const menuBtn = document.querySelector(".menu-icon");
+      const menuList = document.querySelector(".side-bar");
+      const notifications = document.querySelector(".notifications");
+
+      searchBtn.addEventListener("click", () => {
+        searchInput.classList.remove("non");
+        searchInput.classList.toggle("active");
+      });
+
+      menuBtn.addEventListener("click", () => {
+        menuList.classList.remove("non");
+        menuList.classList.toggle("active2");
+        notifications.classList.toggle("active2");
+      });
+    </script>
+  </body>
+</html>
