@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f6e8d7;
+  position: relative;
+}
+.footer {
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  background-color: #232323;
+}
+.left {
+  position: absolute;
+  left: calc(50% - 75.5px);
+  width: 151px;
+  height: 250px;
+  transform-origin: 50% 0%;
+  animation: leg 3s ease infinite;
+}
+.right {
+  position: absolute;
+  left: calc(50% - 75.5px);
+  width: 151px;
+  height: 250px;
+  transform-origin: 50% 0%;
+  transform: rotate(40deg);
+  animation: leg 3s ease 1.5s infinite;
+}
+.shoe {
+  background: url(https://100dayscss.com/codepen/doc-martens.svg) center center
+    no-repeat;
+  position: absolute;
+  width: 151px;
+  height: 128px;
+  left: 0;
+  bottom: 0;
+  animation: shoe 3s ease-in-out infinite;
+}
+
+@keyframes shoe {
+  0%,
+  100% {
+    transform: rotate(-10deg) translateY(-5px) translateX(10px);
+  }
+  25% {
+    transform: rotate(0deg) translateY(0px) translateX(0);
+  }
+  50% {
+    transform: rotate(10deg) translateY(-10px) translateX(10px);
+  }
+  75% {
+    transform: rotate(0deg) translateY(-30px) translateX(0);
+  }
+}
+@keyframes leg {
+  0%,
+  100% {
+    transform: rotate(-22deg);
+  }
+  50% {
+    transform: rotate(40deg);
+  }
+}
